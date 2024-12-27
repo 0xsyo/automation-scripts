@@ -29,13 +29,8 @@ cd automation-scripts
 
 ### 2. **Persiapkan Direktori `bot`**
 
-Skrip ini mengasumsikan bahwa Anda memiliki folder `bot` yang berisi sub-folder proyek JavaScript atau Python. Pastikan folder `bot` berada di dalam repositori yang sudah Anda clone, atau tempatkan folder `bot` di direktori lain yang sesuai.
+Skrip ini mengasumsikan bahwa Anda memiliki folder `bot` atau pindahkan semua folder yang berisikan kode/script/bot ke folder automation-scripts yang berisi proyek JavaScript atau Python. 
 
-- **Buat folder `bot` di dalam repositori yang baru saja Anda clone:**
-
-  ```bash
-  mkdir -p automation-scripts/bot
-  ```
 
   Anda bisa menambahkan folder proyek JavaScript atau Python di dalam folder `bot`.
 
@@ -43,9 +38,22 @@ Skrip ini mengasumsikan bahwa Anda memiliki folder `bot` yang berisi sub-folder 
 
 Jika Anda perlu mengubah jalur folder di dalam skrip, buka `main.sh` dan edit baris berikut:
 
-```bash
-DIR="./bot"  # Menunjukkan bahwa folder 'bot' ada di dalam direktori repositori yang sudah di-clone
+https://github.com/0xsyo/automation-scripts/blob/6b833e9b3d86b740534698f1e4df9f5eb232cd1f/main.sh#L46
+
+pindahkan semua folder / script atau bot pada folder `automation-scripts`
+
+
 ```
+   automation-scripts/
+   ├── main.sh
+   ├── bot1/
+   │   ├── main.js
+   │   └── main.py
+   ├── bot2/
+   │   ├── index.js
+   │   └── main.py
+```
+
 
 ### 3. **Berikan Izin Eksekusi pada Skrip (Opsional)**
 
