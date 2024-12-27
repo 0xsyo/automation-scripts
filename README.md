@@ -13,6 +13,9 @@ Sebelum menjalankan skrip ini, pastikan Anda memiliki hal-hal berikut:
 - **gnome-terminal** (hanya untuk Linux, untuk membuka terminal baru saat menjalankan skrip).
 - **Virtual Environment (Opsional)** untuk menjalankan skrip Python dalam environment terisolasi.
 
+![Deskripsi Gambar](https://github.com/0xsyo/automation-scripts/blob/main/image.jpg?raw=true)
+
+
 ## Cara Menjalankan Skrip
 
 ### 1. **Clone Repositori Git**
