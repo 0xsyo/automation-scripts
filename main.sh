@@ -1,47 +1,5 @@
 #!/bin/bash
 
-# ASCII art with rainbow colors
-ASCII_ART="
-
- _______                          
-|     __|.--.--.---.-.-----.---.-.
-|__     ||  |  |  _  |-- __|  _  |
-|_______||___  |___._|_____|___._|
-         |_____|
-"
-
-# Rainbow colors
-RAINBOW_COLORS=(
-    "\033[31m"  # Red
-    "\033[32m"  # Green
-    "\033[33m"  # Yellow
-    "\033[34m"  # Blue
-    "\033[35m"  # Magenta
-    "\033[36m"  # Cyan
-)
-
-# Function to print ASCII art with rainbow colors
-print_ascii_art_with_rainbow() {
-    local art="$1"
-    local colors=("${!2}")
-    local lines=()
-    
-    # Split the ASCII art into lines
-    while IFS= read -r line; do
-        lines+=("$line")
-    done <<< "$art"
-
-    # Print each line with a different color from the rainbow
-    local color_index=0
-    for line in "${lines[@]}"; do
-        echo -e "${colors[$color_index]}$line"
-        color_index=$(( (color_index + 1) % ${#colors[@]} ))
-    done
-}
-
-# Call the function to print ASCII art with rainbow colors
-print_ascii_art_with_rainbow "$ASCII_ART" RAINBOW_COLORS[@]
-
 # Direktori root di mana semua sub-folder berada
 DIR="../automation-scripts"
 LOG_FILE="$DIR/run_log.txt"
@@ -118,9 +76,9 @@ for folder in "$DIR"/*/; do
                     }
                     gnome-terminal --title="$folder_name" -- bash -c "echo -ne '\033]0;$folder_name\007'; python3 $(basename "$python_file") --action 1; exec bash" &
                 else
-                    # Jika tidak ada venv, jalankan main.py tanpa --action 1
-                    echo "Virtual environment tidak ditemukan, menjalankan main.py tanpa --action 1"
-                    gnome-terminal --title="$folder_name" -- bash -c "echo -ne '\033]0;$folder_name\007'; python3 $(basename "$python_file"); exec bash" &
+                    # Jika tidak ada venv, jalankan main.py dengan python3.10
+                    echo "Virtual environment tidak ditemukan, menjalankan main.py dengan python3.10"
+                    gnome-terminal --title="$folder_name" -- bash -c "echo -ne '\033]0;$folder_name\007'; python3.10 $(basename "$python_file"); exec bash" &
                 fi
             )
             # Menandai folder ini telah diproses dengan menambahkan ke log
